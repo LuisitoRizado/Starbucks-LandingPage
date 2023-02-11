@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section>
+      <div class="circle"></div>
+      <!--Header start-->
+      <header>
+        <a href="#" class="logo"><img src="Images/logo.png" alt="" /></a>
+        <div class="toggle" onclick="toggleMenu();">
+        </div>
+        <ul class="navigation">
+          <li><a href="">Home</a></li>
+          <li><a href="">Menu</a></li>
+          <li><a href="">What's new</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </header>
+      <!--Header end-->
+      <div class="content">
+        <div class="textBox">
+          <h2>It's not just Coffe <br />It's <span>Starbucks</span></h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
+            dignissimos animi ex, laborum earum illo commodi ipsum maiores
+            consequuntur corrupti a quis esse enim aut eius inventore
+            exercitationem ducimus nobis.
+          </p>
+          <a href="">Learn more</a>
+        </div>
+        <div class="imgBox">
+          <img src="Images/img1.png" alt="" class="starbucks">
+        </div>
+      </div>
+      <ul class="thumb">
+        <li><img src="Images/thumb1.png" onclick="imgSlider('Images/img1.png', '#017143')" alt=""></li>
+        <li><img src="Images/thumb2.png" onclick="imgSlider('Images/img2.png' , '#eb7495')"alt=""></li>
+        <li><img src="Images/thumb3.png" onclick="imgSlider('/Images/img3.png', '#d752b1')"  alt=""></li>
+
+      </ul>
+      <ul class="sci">
+        <li><a href="img"><img src="Images/facebook.png" alt=""></a></li>
+        <li><a href="img"><img src="Images/twitter.png" alt=""></a></li>
+        <li><a href="img"><img src="Images/instagram.png" alt=""></a></li>
+
+      </ul>
+    </section>
+    <script>
+      function imgSlider(anything,color){
+        document.querySelector('.starbucks').src = anything;
+        document.querySelector('.circle').style.backgroundColor = color;
+        document.querySelector('header').style.backgroundColor = color;
+      }
+
+      setInterval(() => {
+          document.querySelector('.starbucks').style.transform= 'translateY(-15px)';
+      }, 3000);
+      setInterval(() => {
+          document.querySelector('.starbucks').style.transform= 'translateY(15px)';
+      }, 6000);
+      function toggleMenu(){
+        const menuToggle = document.querySelector('.toggle');
+        const navigation = document.querySelector('.navigation')
+        menuToggle.classList.toggle('active');
+        navigation.classList.toggle('active')
+      }
+    </script>
+  </body>
+</html>
